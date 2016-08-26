@@ -44,7 +44,7 @@ export VAULT_ADDR=http://127.0.0.1:8200
 vault token-create
 ```
 
-* Copy the token, set to `VAULT_TOKEN` and update the `spring.cloud.vault.token` property in the `bootstrap.properties`
+* Copy the token, set to `VAULT_TOKEN`
 
 ```
 export VAULT_TOKEN={token}
@@ -56,3 +56,7 @@ vault write secret/nutaxi-vault password=H@rdT0Gu3ss
 ```
 
 *  Start the application
+
+```
+mvn spring-boot:run -Dspring.cloud.vault.token={token}
+```
